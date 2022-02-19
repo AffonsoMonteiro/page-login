@@ -1,5 +1,8 @@
 
-import { Router, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Private } from './pages/Private';
+
 
 import './App.css';
 
@@ -10,14 +13,19 @@ function App() {
       <header className="">
         <h1>Header do site</h1>
         <nav>
-          ...
+          <Link to="/">
+            Home
+          </Link>
+          <Link to="/private">
+            Página Privada
+          </Link>
         </nav>
       </header>
       <hr />
 
       <Routes>
-        {/* <Router path="/" element={<Home />} />
-        <Router path="/private" element={<Private />} /> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/private" element={<Private />} />
       </Routes>
     </div>
   );
