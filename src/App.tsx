@@ -2,6 +2,7 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Private } from './pages/Private';
+import { RequireAuth } from './contexts/Auth/RequireAuth'
 
 
 import './App.css';
@@ -25,7 +26,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/private" element={<Private />} />
+        <Route path="/private" element={<RequireAuth><Private/></RequireAuth>} />
       </Routes>
     </div>
   );
